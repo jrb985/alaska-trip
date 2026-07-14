@@ -31,7 +31,8 @@
   .meta{color:var(--muted);font-size:15px;margin:0}
   .meta strong{color:var(--text);font-weight:600}
 
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 0}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 0}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
   .stat{background:var(--card);border-radius:10px;padding:16px 18px}
   .stat .l{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
   .stat .v{font-size:26px;font-weight:700;margin-top:5px;font-family:var(--mono)}
@@ -94,7 +95,16 @@
   .done li::before{content:"✓";color:var(--green);font-weight:700}
 
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  @media(max-width:640px){.cols,.stats{grid-template-columns:1fr}}
+  @media(max-width:640px){.cols{grid-template-columns:1fr}}
+
+  /* itinerary */
+  .itin{font-size:14px;min-width:520px}
+  .itin td{padding:9px 12px}
+  .itin .d{color:var(--muted);font-family:var(--mono);font-size:12px;white-space:nowrap}
+  .itin tr.dalton td{background:var(--card2)}
+  .itin tr.dalton td:nth-child(3){color:var(--amber);font-weight:600}
+  .itin tr.off td:nth-child(3){color:var(--ice);font-weight:600}
+  .itin tr.off td{background:rgba(255,255,255,.03)}
 
   .dl{display:inline-block;margin-top:6px;padding:12px 20px;border-radius:8px;background:var(--card2);
       border:1px solid var(--ice);color:var(--ice);text-decoration:none;font-weight:600;font-size:15px}
@@ -111,12 +121,13 @@
     <p class="kicker">Motorcycle Expedition Plan</p>
     <h1>Seattle&nbsp;→&nbsp;Deadhorse</h1>
     <p class="sub">The Dalton Highway to the Arctic Ocean</p>
-    <p class="meta"><strong>2002 BMW F650GS</strong> (base) &nbsp;·&nbsp; ~6,000–6,500 mi round trip &nbsp;·&nbsp; 3–4 weeks<br>
-      Season TBD &nbsp;·&nbsp; Planning began July 2026</p>
+    <p class="meta"><strong>2002 BMW F650GS</strong> (base) &nbsp;·&nbsp; 5,845 mi &nbsp;·&nbsp; 27 days<br>
+      <strong style="color:var(--amber)">Depart Sat Jun 26, 2027 &nbsp;·&nbsp; Home Thu Jul 22, 2027</strong></p>
     <div class="stats">
-      <div class="stat"><div class="l">Round trip</div><div class="v" style="color:var(--ice)">6,000 mi</div></div>
-      <div class="stat"><div class="l">Dalton Highway</div><div class="v" style="color:var(--amber)">414 mi</div></div>
+      <div class="stat"><div class="l">Total distance</div><div class="v" style="color:var(--ice)">5,845 mi</div></div>
+      <div class="stat"><div class="l">Dalton: Jul 8–12</div><div class="v" style="color:var(--amber)">414 mi</div></div>
       <div class="stat"><div class="l">Longest fuel gap</div><div class="v" style="color:var(--red)">239 mi</div></div>
+      <div class="stat"><div class="l">Budget</div><div class="v" style="color:var(--green)">~$8,300</div></div>
     </div>
   </div>
 </header>
@@ -465,6 +476,162 @@
 </section>
 
 <section>
+  <p class="eyebrow" style="color:var(--amber)">Season — locked</p>
+  <h2>Depart Saturday, June 26, 2027.</h2>
+  <p class="lede">Chosen so the Dalton run lands July 8–12 — dead center of the peak window.</p>
+
+  <div class="call green">
+    <p class="t">What this buys you</p>
+    <p>Warmest temperatures, an Atigun Pass clear of snow, near-24-hour daylight — and the best odds
+    of a <strong>dry</strong> Dalton. Dry, the calcium chloride packs hard and grips. Wet, it's the
+    thing most likely to put you down.</p>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="call amber" style="margin-top:0">
+        <p class="t">The tradeoff</p>
+        <p>Peak mosquito season. A nuisance, not a hazard — but the head net is not optional.</p>
+      </div>
+    </div>
+    <div>
+      <div class="call red" style="margin-top:0">
+        <p class="t">If it slips</p>
+        <p>Slip it in <strong>whole weeks.</strong> Don't let it drift toward September — the Dalton
+        turns.</p>
+      </div>
+    </div>
+  </div>
+
+  <p><strong>Shape of the trip:</strong> 10 days north on the Cassiar → 5 days on the Dalton →
+  9 days home on the Alcan. <strong>No day exceeds 340 miles</strong>, and the average riding day is
+  266 — a real day on a loaded 650 single, but not a grind.</p>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--ice)">Day by day</p>
+  <h2>27 days · 5,845 miles</h2>
+  <p class="lede">★ = off day. There are five, and every one is load-bearing — not luxury.</p>
+
+  <div class="scroll">
+    <table class="itin">
+      <thead><tr><th>Day</th><th>Date</th><th>Leg</th><th style="text-align:right">Mi</th></tr></thead>
+      <tbody>
+        <tr><td class="d">1</td><td class="d">Sat Jun 26</td><td>Seattle → Hope, BC <span style="color:var(--muted)">— short on purpose; shake out the load</span></td><td class="num">185</td></tr>
+        <tr><td class="d">2</td><td class="d">Sun Jun 27</td><td>Hope → Quesnel, BC</td><td class="num">330</td></tr>
+        <tr><td class="d">3</td><td class="d">Mon Jun 28</td><td>Quesnel → Smithers, BC</td><td class="num">300</td></tr>
+        <tr><td class="d">4</td><td class="d">Tue Jun 29</td><td>Smithers → Stewart, BC <span style="color:var(--muted)">— onto the Cassiar</span></td><td class="num">250</td></tr>
+        <tr class="off"><td class="d">5</td><td class="d">Wed Jun 30</td><td>★ Stewart / Hyder — bear viewing at Fish Creek</td><td class="num">—</td></tr>
+        <tr><td class="d">6</td><td class="d">Thu Jul 1</td><td>Stewart → Dease Lake, BC <span style="color:var(--muted)">— Canada Day: expect closures</span></td><td class="num">270</td></tr>
+        <tr><td class="d">7</td><td class="d">Fri Jul 2</td><td>Dease Lake → Watson Lake, YT</td><td class="num">250</td></tr>
+        <tr><td class="d">8</td><td class="d">Sat Jul 3</td><td>Watson Lake → Whitehorse</td><td class="num">275</td></tr>
+        <tr class="off"><td class="d">9</td><td class="d">Sun Jul 4</td><td>★ Whitehorse — last easy servicing before the Dalton</td><td class="num">—</td></tr>
+        <tr><td class="d">10</td><td class="d">Mon Jul 5</td><td>Whitehorse → Beaver Creek, YT <span style="color:var(--muted)">— frost heaves begin</span></td><td class="num">290</td></tr>
+        <tr><td class="d">11</td><td class="d">Tue Jul 6</td><td>Beaver Creek → Fairbanks, AK</td><td class="num">310</td></tr>
+        <tr class="off"><td class="d">12</td><td class="d">Wed Jul 7</td><td>★ Fairbanks — Dalton prep. Fit the Rotopax, fill the cans.</td><td class="num">—</td></tr>
+        <tr class="dalton"><td class="d">13</td><td class="d">Thu Jul 8</td><td>Fairbanks → Coldfoot — <strong>the Dalton begins</strong></td><td class="num">260</td></tr>
+        <tr class="dalton"><td class="d">14</td><td class="d">Fri Jul 9</td><td>Coldfoot → Deadhorse — <strong>the 239-mi fuel gap. Atigun Pass.</strong></td><td class="num">240</td></tr>
+        <tr class="dalton"><td class="d">15</td><td class="d">Sat Jul 10</td><td>★ Deadhorse — <strong>Arctic Ocean shuttle.</strong> This is the day.</td><td class="num">—</td></tr>
+        <tr class="dalton"><td class="d">16</td><td class="d">Sun Jul 11</td><td>Deadhorse → Coldfoot</td><td class="num">240</td></tr>
+        <tr class="dalton"><td class="d">17</td><td class="d">Mon Jul 12</td><td>Coldfoot → Fairbanks — off the Dalton</td><td class="num">260</td></tr>
+        <tr class="off"><td class="d">18</td><td class="d">Tue Jul 13</td><td>★ Fairbanks — <strong>wash the bike.</strong> Chloride is corrosive. Don't skip.</td><td class="num">—</td></tr>
+        <tr><td class="d">19</td><td class="d">Wed Jul 14</td><td>Fairbanks → Tok, AK <span style="color:var(--muted)">— southbound on the Alcan</span></td><td class="num">200</td></tr>
+        <tr><td class="d">20</td><td class="d">Thu Jul 15</td><td>Tok → Destruction Bay, YT</td><td class="num">280</td></tr>
+        <tr><td class="d">21</td><td class="d">Fri Jul 16</td><td>Destruction Bay → Whitehorse <span style="color:var(--muted)">— short day, earned</span></td><td class="num">160</td></tr>
+        <tr><td class="d">22</td><td class="d">Sat Jul 17</td><td>Whitehorse → Watson Lake</td><td class="num">275</td></tr>
+        <tr><td class="d">23</td><td class="d">Sun Jul 18</td><td>Watson Lake → Fort Nelson, BC <span style="color:var(--muted)">— Liard Hot Springs. Stop.</span></td><td class="num">325</td></tr>
+        <tr><td class="d">24</td><td class="d">Mon Jul 19</td><td>Fort Nelson → Dawson Creek <span style="color:var(--muted)">— Mile 0</span></td><td class="num">280</td></tr>
+        <tr><td class="d">25</td><td class="d">Tue Jul 20</td><td>Dawson Creek → Prince George</td><td class="num">250</td></tr>
+        <tr><td class="d">26</td><td class="d">Wed Jul 21</td><td>Prince George → Cache Creek</td><td class="num">275</td></tr>
+        <tr><td class="d">27</td><td class="d">Thu Jul 22</td><td><strong>Cache Creek → Seattle</strong> — home</td><td class="num">340</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--green)">Budget</p>
+  <h2>≈ $8,300 all-in.</h2>
+
+  <div class="cols">
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--ice);margin:0 0 10px">On-road (27 days)</h3>
+      <div class="scroll">
+        <table>
+          <tbody>
+            <tr><td>Fuel — 117 gal @ ~$5.25</td><td class="num">$614</td></tr>
+            <tr><td>Lodging — Coldfoot ×2</td><td class="num">$500</td></tr>
+            <tr><td>Lodging — Deadhorse ×2</td><td class="num">$510</td></tr>
+            <tr><td>Lodging — Fairbanks ×4</td><td class="num">$560</td></tr>
+            <tr><td>Lodging — other hotels ×7</td><td class="num">$910</td></tr>
+            <tr><td>Camping ×11</td><td class="num">$275</td></tr>
+            <tr><td>Food — ~$50/day</td><td class="num">$1,350</td></tr>
+            <tr><td>Arctic Ocean shuttle</td><td class="num">$89</td></tr>
+            <tr><td>Misc — wash, laundry, sundries</td><td class="num">$150</td></tr>
+            <tr class="hi"><td><strong>Subtotal</strong></td><td class="num"><strong>$4,958</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin:0 0 10px">Prep &amp; gear (one-time)</h3>
+      <div class="scroll">
+        <table>
+          <tbody>
+            <tr><td>Heidenau K60 Scout set + mount</td><td class="num">$380</td></tr>
+            <tr><td>Rotopax 2 gal + rack</td><td class="num">$150</td></tr>
+            <tr><td><strong>Spare fuel pump + controller</strong></td><td class="num">$350</td></tr>
+            <tr><td>Chain + sprockets</td><td class="num">$200</td></tr>
+            <tr><td>Tubes, filters, oil, consumables</td><td class="num">$250</td></tr>
+            <tr><td>Protection <em style="color:var(--muted);font-weight:400">(if not fitted)</em></td><td class="num">$500</td></tr>
+            <tr><td>inReach + 2 mo <em style="color:var(--muted);font-weight:400">(if not owned)</em></td><td class="num">$450</td></tr>
+            <tr class="hi"><td><strong>Subtotal</strong></td><td class="num"><strong>$2,280</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="call green">
+    <p class="t">Total, including 15% contingency</p>
+    <p style="font-size:22px;font-weight:700;color:var(--green)">≈ $8,300</p>
+    <p style="margin-top:8px">Gear already owned → <strong>~$7,200</strong>. On-road only →
+    <strong>~$5,700</strong>, about <strong>$184/day</strong>.</p>
+  </div>
+
+  <div class="call amber">
+    <p class="t">Where this number is soft</p>
+    <p>The 2027 fuel price is a guess (±$1/gal moves the total by only ~$120 — not a big lever).
+    <strong>Coldfoot's rate is unverified</strong> — I used $250/night from anecdotal reports; call
+    (907) 474-3500. Deadhorse is solid. And <strong>the contingency is not padding</strong> — on a
+    24-year-old bike, expect to use some of it.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--red)">What to book, and when</p>
+  <h2>The Dalton has almost no beds.</h2>
+  <p class="lede">Coldfoot and Deadhorse are the scarcest things in the plan. Everything else on this
+  route can be improvised.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>When</th><th>What</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td class="no">Now → Jan 2027</td><td><strong>Coldfoot × 2 nights</strong> (Jul 8, Jul 11) — the scarcest bed in the plan</td></tr>
+        <tr class="hi"><td class="no">Now → Jan 2027</td><td><strong>Deadhorse × 2 nights</strong> (Jul 9, Jul 10)</td></tr>
+        <tr><td class="warn">~Apr 2027</td><td>Fairbanks × 4 (Jul 6, 7, 12, 13)</td></tr>
+        <tr><td class="warn">~Apr 2027</td><td>Whitehorse × 2 · Stewart × 2</td></tr>
+        <tr><td style="color:var(--ice)">~Jun 2027</td><td>Arctic Ocean shuttle — 24h minimum, but book weeks out</td></tr>
+        <tr><td style="color:var(--muted)">Rolling</td><td>Everything else. BC/Yukon campgrounds are mostly first-come.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:14px">Deadhorse confirmed: Prudhoe Bay Hotel $260 ·
+  Deadhorse Camp ~$249 · Arctic Ocean shuttle $89/person.</p>
+</section>
+
+<section>
   <p class="eyebrow" style="color:var(--green)">Where things stand</p>
   <h2>Resolved vs. open</h2>
 
@@ -472,6 +639,8 @@
     <div>
       <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--green);margin:0 0 10px">Resolved</h3>
       <ul class="chk done">
+        <li><strong style="color:var(--green)">Season: summer 2027 — Jun 26 → Jul 22</strong></li>
+        <li><strong style="color:var(--green)">Itinerary + budget built (27 days)</strong></li>
         <li>Destination: Deadhorse, not Nome</li>
         <li>Bike: 2002 F650GS, base (19"/17")</li>
         <li>Mechanical refresh complete</li>
@@ -484,20 +653,22 @@
     <div>
       <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin:0 0 10px">Open</h3>
       <ul class="chk">
-        <li><strong style="color:var(--amber)">Season — which summer?</strong> This is the domino; it
-          sets every booking deadline downstream.</li>
+        <li><strong style="color:var(--amber)">Book Coldfoot + Deadhorse.</strong> The scarcest beds
+          in the plan — book roughly a year out. <strong>This is now the urgent one.</strong></li>
+        <li>Confirm the K60 Scout in 140/80-17 — the whole tire plan rests on it.</li>
         <li>Did the refresh cover the strip sensor, water pump seal, stator, valves?</li>
-        <li>Trip length — 3 weeks or 4?</li>
-        <li>Solo, or with others?</li>
-        <li>Side trips: Hyder · Top of the World · Denali · Kenai · Valdez</li>
+        <li>Solo, or with others? Changes the Dalton risk calculus materially.</li>
+        <li>Shakedown ride — loaded, multi-day, on gravel. Ideally spring 2027.</li>
+        <li>Side trips not yet included: Top of the World · Denali · Kenai · Valdez</li>
       </ul>
     </div>
   </div>
 
   <div class="call ice">
     <p class="t">Next steps</p>
-    <p>Lock the season → confirm K60 availability in 140/80-17 → fit the Rotopax and rack → build the
-    day-by-day itinerary and budget → book early: Deadhorse lodging, the Arctic Ocean shuttle, Coldfoot.</p>
+    <p><strong>1.</strong> Book Coldfoot ×2 and Deadhorse ×2 → <strong>2.</strong> Confirm the K60 in
+    140/80-17 → <strong>3.</strong> Fit the Rotopax and rack → <strong>4.</strong> Shakedown ride,
+    loaded, on gravel → <strong>5.</strong> Confirm the insurance is valid in Canada.</p>
   </div>
 
   <a class="dl" href="Seattle_to_Deadhorse_Trip_Plan.pptx">↓ Download the slide deck (.pptx)</a>
