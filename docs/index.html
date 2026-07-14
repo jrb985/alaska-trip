@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seattle → Deadhorse — Motorcycle Trip Plan</title>
+<meta name="description" content="Planning a motorcycle trip from Seattle to Deadhorse, Alaska via the Dalton Highway, on a 2002 BMW F650GS.">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='88'>🏍️</text></svg>">
+<style>
+  :root{
+    --bg:#0f1b2a; --card:#1a2a3d; --card2:#22354b; --line:#2c4157;
+    --text:#e8eef4; --muted:#8c9eb0;
+    --amber:#f5a623; --ice:#4fc3f7; --red:#e2564d; --green:#4caf7d;
+    --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.65 "Segoe UI",system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  a{color:var(--ice)}
+
+  /* hero */
+  .hero{border-top:5px solid var(--amber);padding:76px 0 54px}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700;margin:0 0 14px}
+  h1{font-size:clamp(38px,7vw,68px);line-height:1.03;margin:0 0 14px;font-weight:300;letter-spacing:-.02em}
+  .sub{font-size:clamp(19px,3vw,25px);color:var(--ice);font-weight:300;margin:0 0 26px}
+  .meta{color:var(--muted);font-size:15px;margin:0}
+  .meta strong{color:var(--text);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 0}
+  .stat{background:var(--card);border-radius:10px;padding:16px 18px}
+  .stat .l{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .stat .v{font-size:26px;font-weight:700;margin-top:5px;font-family:var(--mono)}
+
+  /* sections */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,4vw,33px);font-weight:300;margin:0 0 6px;letter-spacing:-.01em}
+  .eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin:0 0 8px}
+  .lede{color:var(--muted);font-size:17px;margin:0 0 22px}
+  p{margin:0 0 15px}
+  ul{margin:0 0 15px;padding-left:20px}
+  li{margin-bottom:8px}
+  strong{color:#fff;font-weight:600}
+  em{color:var(--amber);font-style:normal;font-weight:600}
+
+  /* callouts */
+  .call{border-radius:10px;padding:18px 20px;margin:0 0 20px;background:var(--card);border-left:4px solid var(--muted)}
+  .call.red{border-left-color:var(--red);background:#241f27}
+  .call.amber{border-left-color:var(--amber);background:#241f1c}
+  .call.green{border-left-color:var(--green);background:#18261f}
+  .call.ice{border-left-color:var(--ice);background:#16232e}
+  .call .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 7px}
+  .call.red .t{color:var(--red)} .call.amber .t{color:var(--amber)}
+  .call.green .t{color:var(--green)} .call.ice .t{color:var(--ice)}
+  .call p:last-child{margin-bottom:0}
+
+  /* tables */
+  .scroll{overflow-x:auto;margin:0 0 20px}
+  table{border-collapse:collapse;width:100%;font-size:15px;min-width:460px}
+  th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+     padding:0 14px 9px;border-bottom:1px solid var(--line);font-weight:700}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num{font-family:var(--mono);text-align:right;white-space:nowrap}
+  .yes{color:var(--green);font-weight:600}
+  .no{color:var(--red);font-weight:600}
+  .warn{color:var(--amber);font-weight:600}
+  tr.hi td{background:var(--card2)}
+
+  /* fuel gap bars */
+  .gap{background:var(--card);border:1px solid var(--red);border-radius:10px;padding:20px;margin:0 0 20px}
+  .row{display:flex;align-items:center;gap:14px;margin-top:12px}
+  .track{flex:1;min-width:0}
+  .fill{height:22px;border-radius:4px}
+  .row .lab{font-family:var(--mono);font-size:13px;white-space:nowrap;font-weight:700}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:0 0 20px}
+  .c{background:var(--card);border-radius:10px;padding:17px 18px}
+  .c.pick{background:var(--card2);border:1px solid var(--green)}
+  .c h3{margin:0 0 8px;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+  .c p{font-size:14px;color:var(--muted);margin:0}
+  .tag{display:inline-block;margin-top:11px;font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+       font-weight:700;padding:4px 9px;border-radius:99px;background:rgba(255,255,255,.06)}
+
+  /* checklist */
+  .chk{list-style:none;padding:0}
+  .chk li{padding-left:26px;position:relative}
+  .chk li::before{content:"☐";position:absolute;left:0;color:var(--muted);font-size:15px}
+  .done li::before{content:"✓";color:var(--green);font-weight:700}
+
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:640px){.cols,.stats{grid-template-columns:1fr}}
+
+  .dl{display:inline-block;margin-top:6px;padding:12px 20px;border-radius:8px;background:var(--card2);
+      border:1px solid var(--ice);color:var(--ice);text-decoration:none;font-weight:600;font-size:15px}
+  .dl:hover{background:#2a4763}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--muted);font-size:13px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Motorcycle Expedition Plan</p>
+    <h1>Seattle&nbsp;→&nbsp;Deadhorse</h1>
+    <p class="sub">The Dalton Highway to the Arctic Ocean</p>
+    <p class="meta"><strong>2002 BMW F650GS</strong> (base) &nbsp;·&nbsp; ~6,000–6,500 mi round trip &nbsp;·&nbsp; 3–4 weeks<br>
+      Season TBD &nbsp;·&nbsp; Planning began July 2026</p>
+    <div class="stats">
+      <div class="stat"><div class="l">Round trip</div><div class="v" style="color:var(--ice)">6,000 mi</div></div>
+      <div class="stat"><div class="l">Dalton Highway</div><div class="v" style="color:var(--amber)">414 mi</div></div>
+      <div class="stat"><div class="l">Longest fuel gap</div><div class="v" style="color:var(--red)">239 mi</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <p class="eyebrow" style="color:var(--red)">The finding that reshaped this trip</p>
+  <h2>You cannot ride to Nome.</h2>
+  <div class="call red" style="margin-top:20px">
+    <p><strong>Nome has no road connection to the North American highway system.</strong> It is a
+    fly-in / barge-in town. No highway reaches it from Fairbanks, Anchorage, or anywhere else.</p>
+  </div>
+  <p>Nome does have roughly 250–350 miles of its own gravel roads — Teller, Council, Kougarok — but
+  that network is an island. It dead-ends into tundra and connects to nothing.</p>
+  <p>The original goal was Nome. To ride <em>in</em> Nome you would have to air-freight the bike from
+  Anchorage or barge it in. So the destination changed.</p>
+  <div class="call green">
+    <p class="t">Decision</p>
+    <p><strong>Deadhorse / Prudhoe Bay via the Dalton Highway.</strong> It is road-continuous from
+    Seattle, it is genuinely the end of the road, and it is the trip most people mean by this.
+    Nome is parked as a possible future add-on.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--ice)">Route</p>
+  <h2>Seattle → BC → Yukon → Fairbanks → Deadhorse</h2>
+  <p class="lede">Ride a loop: north one corridor, south the other. Same mileage, double the country.</p>
+
+  <div class="grid">
+    <div class="c">
+      <h3 style="color:var(--ice)">Northbound — Stewart–Cassiar (BC-37)</h3>
+      <p>~450 mi. Remote, quiet, fully paved. More wildlife, fewer services. The side trip to
+      Stewart/Hyder is worth it.</p>
+    </div>
+    <div class="c">
+      <h3 style="color:var(--amber)">Southbound — Alaska Highway (Alcan)</h3>
+      <p>1,387 mi, Dawson Creek → Delta Junction. More services, more traffic. The historic route.</p>
+    </div>
+  </div>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Leg (one way, via Cassiar)</th><th style="text-align:right">Miles</th></tr></thead>
+      <tbody>
+        <tr><td>Seattle → Prince George, BC</td><td class="num">~800</td></tr>
+        <tr><td>Prince George → Kitwanga</td><td class="num">~450</td></tr>
+        <tr><td>Cassiar Hwy → Alaska Hwy junction</td><td class="num">~450</td></tr>
+        <tr><td>Watson Lake → Whitehorse</td><td class="num">~275</td></tr>
+        <tr><td>Whitehorse → Tok, AK</td><td class="num">~400</td></tr>
+        <tr><td>Tok → Fairbanks</td><td class="num">~200</td></tr>
+        <tr class="hi"><td><strong>Fairbanks → Deadhorse</strong> (incl. the Dalton)</td><td class="num warn">~500</td></tr>
+        <tr class="hi"><td><strong>Total, Seattle → Deadhorse</strong></td><td class="num yes">≈3,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Round trip ≈ 6,000–6,500 miles.</strong> Budget 3–4 weeks at a sane pace. These are
+  planning numbers, not gospel.</p>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--red)">The Dalton Highway</p>
+  <h2>Everything south of Fairbanks is a normal trip. This isn't.</h2>
+  <p class="lede">414 miles, Livengood → Deadhorse. Majority unpaved. No cell service.</p>
+
+  <div class="call amber">
+    <p class="t">Trucks own the road</p>
+    <p>Heavy oilfield traffic. Get over, slow down, expect flying rock. Truck-thrown stone is the
+    number one source of damage.</p>
+  </div>
+  <div class="call red">
+    <p class="t">Calcium chloride</p>
+    <p>The surface is treated with it for dust control. Dry, it packs hard, feels like pavement, and
+    lulls you. <strong>Wet, it turns to greasy peanut butter and it will put you down.</strong> It is
+    also brutally corrosive — wash the bike, underside especially, as soon as you're off it.</p>
+  </div>
+  <div class="call ice">
+    <p class="t">Atigun Pass · 4,739 ft</p>
+    <p>Weather can be full winter in any month. No services, no signal, no help.</p>
+  </div>
+
+  <div class="call">
+    <p class="t" style="color:var(--muted)">Pacing</p>
+    <p>Don't do it in one heroic push. Four days from Fairbanks and back: Fairbanks → Coldfoot,
+    Coldfoot → Deadhorse, Deadhorse → Coldfoot, Coldfoot → Fairbanks. Add a day to take the Arctic
+    Ocean shuttle without rushing.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--red)">Constraint #1</p>
+  <h2>The fuel gap is longer than the bike's range.</h2>
+  <p class="lede">Fuel exists at exactly three places on the Dalton.</p>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Fuel stop</th><th style="text-align:right">Mile marker</th></tr></thead>
+      <tbody>
+        <tr><td>Yukon River Camp</td><td class="num">MP 56</td></tr>
+        <tr><td><strong>Coldfoot</strong></td><td class="num">MP 175</td></tr>
+        <tr><td>Deadhorse</td><td class="num">MP 414</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="gap">
+    <p class="t" style="color:var(--red);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0">Coldfoot → Deadhorse</p>
+    <p style="color:var(--muted);margin:6px 0 0;font-size:15px">The longest fuel gap on any public road in the United States.</p>
+    <div class="row">
+      <div class="track"><div class="fill" style="width:100%;background:var(--red)"></div></div>
+      <div class="lab" style="color:var(--red)">239 mi &nbsp;fuel gap</div>
+    </div>
+    <div class="row">
+      <div class="track"><div class="fill" style="width:96%;background:var(--amber)"></div></div>
+      <div class="lab" style="color:var(--amber)">230 mi &nbsp;stock range</div>
+    </div>
+  </div>
+
+  <p>The F650GS holds <strong>4.4 US gallons</strong> and returns roughly 50 mpg — about
+  <strong>230 miles claimed</strong>. Derate for a loaded bike, headwind, gravel, and low-gear
+  slogging through wet calcium chloride, and the real number is closer to <strong>200</strong>.</p>
+
+  <div class="call red">
+    <p><strong>You would run dry before Deadhorse.</strong></p>
+  </div>
+
+  <p>And you can't fix it the usual way. <strong>The F650GS fuel tank sits under the seat</strong>,
+  integrated into the frame's rear triangle. There is no IMS/Safari-style long-range tank for this
+  bike — the aftermarket effectively doesn't exist, and the under-seat aux tanks people have
+  attempted fight a compound-curved seat base and custom fuel plumbing.</p>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--green)">Constraint #1 — solved</p>
+  <h2>Carry external fuel. It's a $100 problem.</h2>
+
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Configuration</th><th>Total range</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>Stock tank only</td><td class="num">~200–230 mi</td><td class="no">Not enough</td></tr>
+        <tr class="hi"><td><strong>+ 1 gal Rotopax</strong></td><td class="num">~280 mi</td><td class="yes">Solves it</td></tr>
+        <tr class="hi"><td>+ 2 gal Rotopax</td><td class="num">~330 mi</td><td class="yes">Comfortable</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call green">
+    <p class="t">Recommendation</p>
+    <p><strong>One to two gallons of Rotopax on a rear rack, carried on the Dalton only.</strong>
+    Cheap, simple, proven. Leave it behind for the pavement miles south of Fairbanks.</p>
+  </div>
+  <div class="call amber">
+    <p class="t">Discipline</p>
+    <p>Top off at Yukon River (MP 56) and Coldfoot (MP 175) <strong>every time, without
+    exception.</strong> There is no "I'll get it at the next one."</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--ice)">The machine</p>
+  <h2>2002 BMW F650GS — base model</h2>
+
+  <div class="cols">
+    <div>
+      <div class="scroll">
+        <table>
+          <tbody>
+            <tr><td style="color:var(--muted)">Engine</td><td><strong>652cc single (Rotax)</strong></td></tr>
+            <tr><td style="color:var(--muted)">Wheels</td><td><strong>19" front / 17" rear</strong></td></tr>
+            <tr><td style="color:var(--muted)">Tire sizes</td><td><strong>110/80-19 · 140/80-17</strong></td></tr>
+            <tr><td style="color:var(--muted)">Fuel</td><td><strong>4.4 gal — under the seat</strong></td></tr>
+            <tr><td style="color:var(--muted)">Weight</td><td><strong>~430 lb wet</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="call green" style="margin-top:0">
+        <p class="t">Verdict: a good choice</p>
+        <p>A proven round-the-world bike. Comfortable over the 2,400 pavement miles north, and light
+        enough to pick up alone — which you will need to do. This is not a compromise pick.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="c">
+      <h3 style="color:var(--amber)">Base, not Dakar</h3>
+      <p>19" front and shorter travel is a modest disadvantage on the Dalton versus the Dakar's 21".
+      Not a problem — just ride slower and stand on the pegs.</p>
+    </div>
+    <div class="c">
+      <h3 style="color:var(--green)">Mechanical refresh — done</h3>
+      <p>Completed before July 2026. This retires the single biggest risk in the plan.</p>
+    </div>
+  </div>
+
+  <div class="call red">
+    <p class="t">The bike is 24 years old</p>
+    <p><strong>Reliability is a safety item, not a maintenance item.</strong> A breakdown on the
+    Dalton is an emergency: no cell service, 240 miles between services, and a tow from Deadhorse
+    costs more than the bike is worth.</p>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:28px 0 12px">
+    Known F650GS failure points</h3>
+  <ul class="chk">
+    <li><strong>Fuel pump + controller</strong> — a known failure on this generation, in-tank under
+      the seat. Fails on the Dalton and the trip is over in the worst possible place.
+      <em>Carry a spare.</em></li>
+    <li><strong>Fuel-level "strip" sensor</strong> — famously fails. Normally a shrug, ride by trip
+      meter. But the range is <em>already</em> short of the 239-mile gap, so flying blind on fuel is
+      not acceptable here. <em>Fix it.</em></li>
+    <li><strong>Water pump seal</strong> — classic wear item. Check the weep hole for coolant.</li>
+    <li><strong>Stator / regulator-rectifier</strong> — check charging voltage.</li>
+    <li>Valve clearances checked and set.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--ice)">Tires</p>
+  <h2>Don't optimize for the 8% of the trip that's dirt.</h2>
+
+  <div class="call amber">
+    <p>Round trip is about 6,000 miles. The Dalton is roughly 600 of them. A soft knobby rear can be
+    cooked in ~3,000 miles — <strong>you'd destroy it just getting to Fairbanks.</strong></p>
+  </div>
+
+  <p>The real constraint is the <strong>140/80-17 rear</strong>, which is an unusual size with very
+  few options — not grip.</p>
+
+  <div class="grid">
+    <div class="c pick">
+      <h3 style="color:var(--green)">Heidenau K60 Scout</h3>
+      <p>Comes in 140/80-17. Riders report 10,000+ miles on a set. Adequate on the Dalton, excellent
+      everywhere else. One set does the whole trip. Downside: notoriously hard to mount.</p>
+      <span class="tag" style="color:var(--green)">Recommended</span>
+    </div>
+    <div class="c">
+      <h3 style="color:var(--amber)">Continental TKC80</h3>
+      <p>Better in mud, but wears fast — and Continental is phasing it out, replaced by the
+      redesigned TKC80² (small sizes May 2026, larger August 2026).</p>
+      <span class="tag" style="color:var(--amber)">Gen-2 only</span>
+    </div>
+    <div class="c">
+      <h3 style="color:var(--muted)">Mitas E-07</h3>
+      <p>More like 60/40 street, long-wearing. Fine — but the K60 does the same job with more dirt
+      capability.</p>
+      <span class="tag" style="color:var(--muted)">Redundant</span>
+    </div>
+  </div>
+
+  <div class="call green">
+    <p class="t">Recommendation</p>
+    <p><strong>Heidenau K60 Scout front and rear, one fresh set, the whole trip.</strong> No mid-trip
+    swap, no shipping tires to Fairbanks. Ride the Dalton a little slower to make up the grip
+    difference — which you should be doing anyway.</p>
+  </div>
+  <div class="call red">
+    <p class="t">Verify early</p>
+    <p>The 140/80-17 rear is an oddball size with few options. Confirm availability before building
+    around it. If that size dries up, this section changes.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--ice)">The destination</p>
+  <h2>Deadhorse is an industrial camp, not a town.</h2>
+  <p class="lede">No beach, no bar, no triumphant sign worth much. Manage expectations — the ride is
+  the reward.</p>
+
+  <div class="cols">
+    <div>
+      <div class="call ice" style="margin-top:0">
+        <p class="t">Lodging — book ahead, they sell out</p>
+        <p>Aurora Hotel · Prudhoe Bay Hotel · Deadhorse Camp. Rustic, camp-style, meals usually
+        included. <strong>Camping there is effectively not a thing — budget for a room.</strong></p>
+      </div>
+    </div>
+    <div>
+      <div class="call amber" style="margin-top:0">
+        <p class="t">You cannot ride to the Arctic Ocean</p>
+        <p>The final stretch crosses secured oilfield property. You must take an <strong>escorted
+        shuttle</strong>, booked in advance — 24h minimum for the security check. Bring government
+        photo ID.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin:28px 0 12px">
+    Season &amp; timing</h3>
+  <div class="scroll">
+    <table>
+      <tbody>
+        <tr><td style="color:var(--muted)">Practical window</td><td><strong>mid-June → early September</strong></td></tr>
+        <tr><td style="color:var(--muted)">Peak</td><td><strong>late June / July</strong> — longest daylight, best odds of a dry Dalton</td></tr>
+        <tr><td style="color:var(--muted)">Mosquitoes</td><td>Brutal in June–July. A head net is not optional.</td></tr>
+        <tr><td style="color:var(--muted)">Late Aug / early Sept</td><td>Fewer bugs, fall color, aurora — but snow on Atigun becomes a live risk and services start closing.</td></tr>
+        <tr><td style="color:var(--muted)">Trip length</td><td><strong>3–4 weeks.</strong> It can be done in 2, but you'd be grinding and seeing nothing.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--amber)">Gear, safety &amp; border</p>
+  <h2>The non-negotiables</h2>
+
+  <div class="cols">
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--red);margin:0 0 10px">Safety</h3>
+      <ul class="chk">
+        <li><strong>Satellite communicator</strong> (inReach / ZOLEO). No cell on the Dalton — this
+          is the only way to call for help.</li>
+        <li>Bear spray, accessible, not buried in a pannier.</li>
+        <li>Ability to fix a flat yourself: tubes, irons, pump.</li>
+        <li>First aid kit, plus a day of emergency food and water.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--ice);margin:0 0 10px">Gear</h3>
+      <ul class="chk">
+        <li>Layers rated for near-freezing and rain.</li>
+        <li>Heated grips / vest — worth it.</li>
+        <li>Real rain gear. You will ride in rain.</li>
+        <li>Head net and DEET.</li>
+        <li>Camping kit rated well below expected lows.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin:22px 0 10px">
+    Border — you cross into Canada twice</h3>
+  <ul class="chk">
+    <li>Passport — not just a passport card.</li>
+    <li><strong>Proof of insurance valid in Canada.</strong> US policies are not automatically valid;
+      confirm with your insurer.</li>
+    <li>Vehicle registration. Cash in CAD and USD — remote stops can be card-flaky.</li>
+  </ul>
+  <div class="call red">
+    <p><strong>Firearms: do not.</strong> Bringing a handgun into Canada is a serious offense and
+    will end the trip at the border. Bear spray is the answer.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow" style="color:var(--green)">Where things stand</p>
+  <h2>Resolved vs. open</h2>
+
+  <div class="cols">
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--green);margin:0 0 10px">Resolved</h3>
+      <ul class="chk done">
+        <li>Destination: Deadhorse, not Nome</li>
+        <li>Bike: 2002 F650GS, base (19"/17")</li>
+        <li>Mechanical refresh complete</li>
+        <li>Fuel: 1–2 gal Rotopax</li>
+        <li>Carry a spare fuel pump + controller</li>
+        <li>Tires: Heidenau K60 Scout, one set</li>
+        <li>Route: Cassiar north, Alcan south</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--amber);margin:0 0 10px">Open</h3>
+      <ul class="chk">
+        <li><strong style="color:var(--amber)">Season — which summer?</strong> This is the domino; it
+          sets every booking deadline downstream.</li>
+        <li>Did the refresh cover the strip sensor, water pump seal, stator, valves?</li>
+        <li>Trip length — 3 weeks or 4?</li>
+        <li>Solo, or with others?</li>
+        <li>Side trips: Hyder · Top of the World · Denali · Kenai · Valdez</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="call ice">
+    <p class="t">Next steps</p>
+    <p>Lock the season → confirm K60 availability in 140/80-17 → fit the Rotopax and rack → build the
+    day-by-day itinerary and budget → book early: Deadhorse lodging, the Arctic Ocean shuttle, Coldfoot.</p>
+  </div>
+
+  <a class="dl" href="Seattle_to_Deadhorse_Trip_Plan.pptx">↓ Download the slide deck (.pptx)</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Planning notes for a motorcycle trip from Seattle to Deadhorse, Alaska. Distances and figures
+    are planning estimates, not gospel — verify anything you'd bet your fuel range on.</p>
+    <p>Last updated July 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>
