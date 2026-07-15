@@ -10,11 +10,11 @@ northernmost point reachable by road in North America — via the **Dalton Highw
 
 | | |
 |---|---|
-| **Dates** | Sat Jun 26 – Sun Jul 25, **2027** (30 days) |
-| **Distance** | 6,120 mi round trip |
+| **Dates** | Sat Jun 26 – Mon Jul 26, **2027** (31 days) |
+| **Distance** | 6,208 mi round trip |
 | **Bike** | 2002 BMW F650GS, base model (19" / 17") |
-| **Budget** | ≈ $9,200 all-in |
-| **Route** | North on the Stewart–Cassiar · Dalton to Deadhorse · Denali · south on the Alcan |
+| **Budget** | ≈ $9,600 all-in |
+| **Route** | Stewart–Cassiar north · Dalton to Deadhorse · Denali · Top of the World to Dawson City · Alcan south |
 
 ---
 
@@ -36,7 +36,7 @@ tank exists. The answer is a Rotopax strapped to the rack.
 | | |
 |---|---|
 | [`docs/index.html`](docs/index.html) | The published plan — route, the Dalton, fuel math, bike prep, tires, day-by-day itinerary, budget, booking deadlines |
-| [`docs/Seattle_to_Deadhorse_Trip_Plan.pptx`](docs/Seattle_to_Deadhorse_Trip_Plan.pptx) | The same plan as a 17-slide deck |
+| [`docs/Seattle_to_Deadhorse_Trip_Plan.pptx`](docs/Seattle_to_Deadhorse_Trip_Plan.pptx) | The same plan as an 18-slide deck |
 
 *Planning notes are kept locally and aren't published here.*
 
