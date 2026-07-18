@@ -35,7 +35,7 @@ tank exists. The answer is a Rotopax strapped to the rack.
 
 | | |
 |---|---|
-| [`docs/index.html`](docs/index.html) | The published plan — route, the Dalton, fuel math, bike prep, tires, day-by-day itinerary, budget, booking deadlines |
+| [`docs/index.html`](docs/index.html) | The published plan — route, the Dalton, fuel math, bike prep, tires, day-by-day itinerary, budget, booking deadlines, **build-up rides** |
 | [`docs/Seattle_to_Deadhorse_Trip_Plan.pptx`](docs/Seattle_to_Deadhorse_Trip_Plan.pptx) | The same plan as an 18-slide deck |
 
 *Planning notes are kept locally and aren't published here.*
@@ -45,6 +45,9 @@ tank exists. The answer is a Rotopax strapped to the rack.
 Season is locked and the itinerary is built. The live work now is **booking** — Coldfoot and
 Deadhorse are the scarcest beds on the route and need reserving roughly a year out, with Denali
 lodging and the park bus tour close behind.
+
+Also scoped: three **build-up rides** to real dinosaur trackways — Wyoming, Utah and Alberta —
+as shakedowns for the main trip. Dates not yet chosen.
 
 ---
 
