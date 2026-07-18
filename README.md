@@ -47,7 +47,9 @@ Deadhorse are the scarcest beds on the route and need reserving roughly a year o
 lodging and the park bus tour close behind.
 
 Also scoped: three **build-up rides** to real dinosaur trackways — Wyoming, Utah and Alberta —
-as shakedowns for the main trip. Dates not yet chosen.
+as shakedowns for the main trip. The first of them, **Bighorn Basin, WY**, is now planned
+day-by-day: 10 days, ~2,205 mi, ≈$2,100, over the Beartooth to the Red Gulch tracksite. Dates
+still not chosen — the Beartooth Highway's seasonal opening is the gate.
 
 ---
 
